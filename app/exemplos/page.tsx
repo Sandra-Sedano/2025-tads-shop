@@ -1,7 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; /**so usa do lado do cliente */
+
 type Marca = {
   id: number;
   nome: string;
