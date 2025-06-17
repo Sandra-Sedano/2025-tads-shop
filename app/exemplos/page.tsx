@@ -1,4 +1,4 @@
-"use client";
+"use client"; /**Todo componente que tem use client ele é dinamico, ele vai renderizar a pagina novamente a cada requisicao */
 
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react"; /**so usa do lado do cliente */

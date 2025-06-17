@@ -1,15 +1,10 @@
-export default async function HomePage() {
-  let response = await fetch("http://localhost:3002/marcas")
-  let marcas await response.json()
+export default function HomePage() {
+  
 
   return (
     <div className="p-4">
       <h1>Página Inicial</h1>
-      <ul>
-          {marcas.map((marca: Marca) => (
-            <li key={marca.id}>{marca.nome}</li>
-          ))}
-        </ul>
+      
     </div>
   );
 }
