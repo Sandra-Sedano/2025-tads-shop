@@ -31,7 +31,7 @@ export function MarcasList({ marcas }: MarcasListProps) {
           {marcas.map((marca) => (
             <TableRow key={marca.id}>
               <TableCell className="font-medium">{marca.id}</TableCell>
-              <TableCell>{}marca.nome</TableCell>
+              <TableCell>{marca.nome}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
                   <Button size="icon">
