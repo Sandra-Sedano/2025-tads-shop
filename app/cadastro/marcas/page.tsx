@@ -3,11 +3,8 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { MarcasList } from "./marcas-list";
 import Link from "next/link";
-import { Marca } from "@/models/marca";
-export const dynamic = 'force-dynamic' /**força a pagina a nao ser cacheada */
-export default async  function PageMarcas() {
-  const response  = await fetch('http://localhost:3002/marcas'); /**fetch para nao ter um monte de requisiçao desnecessaria */
-const marcas: Marca[] = await response.json();
+import { Suspense } from "react";
+export default function PageMarcas() {
   return (
     <section className="p-8">
       <div className="flex items-center justify-between">
@@ -24,7 +21,9 @@ const marcas: Marca[] = await response.json();
           </Button>
         </Link>
       </div>
-      <MarcasList  marcas={marcas}/> /* compnete resposanvel por gerar a listagem */
+        <Suspense fallback={<div className="text-green-400">Carregando</div>}>Add commentMore actions
+        <MarcasList />
+      </Suspense>
     </section>
   );
 }

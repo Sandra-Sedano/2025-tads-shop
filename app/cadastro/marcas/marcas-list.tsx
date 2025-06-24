@@ -1,4 +1,3 @@
-"use client";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,11 +10,15 @@ import {
 } from "@/components/ui/table";
 import { Marca } from "@/models/marca";
 import { Edit, Trash } from "lucide-react";
-type MarcasListProps = {
-  marcas: Marca[]
-}
 
-export function MarcasList({ marcas }: MarcasListProps) {
+
+export async function MarcasList() {
+   await new Promise((resolve)=>{setTimeout(resolve,3000)})
+
+   const response = await fetch('http://localhost:3002/marcas',{
+     cache:'no-store'
+   })
+   const marcas:Marca[] = await response.json();
 
   return (
     <section className="mt-8 rounded-md border">
