@@ -1,4 +1,4 @@
-
+import { DeleteButton } from "@/components/delete-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -20,6 +20,10 @@ export async function MarcasList() {
    })
    const marcas:Marca[] = await response.json();
 
+  function handleDelete(id: number) {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <section className="mt-8 rounded-md border">
       <Table>
@@ -40,9 +44,8 @@ export async function MarcasList() {
                   <Button size="icon">
                     <Edit />
                   </Button>
-                  <Button size="icon" variant="destructive">
-                    <Trash />
-                  </Button>
+               <DeleteButton onClick={() => handleDelete(marca.id)} />
+
                 </div>
               </TableCell>
             </TableRow>

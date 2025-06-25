@@ -22,7 +22,7 @@ export default function PageMarcas() {
         </Link>
       </div>
         <Suspense fallback={<div className="text-green-400">Carregando</div>}>Add commentMore actions
-        <MarcasList />
+        <MarcasList/>
       </Suspense>
     </section>
   );

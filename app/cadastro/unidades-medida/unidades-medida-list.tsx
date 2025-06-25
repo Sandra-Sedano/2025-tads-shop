@@ -1,5 +1,6 @@
 "use client";
 
+import { DeleteButton } from "@/components/delete-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -33,9 +34,8 @@ export function UnidadesMedidaList() {
                 <Button size="icon">
                   <Edit />
                 </Button>
-                <Button size="icon" variant="destructive">
-                  <Trash />
-                </Button>
+               <DeleteButton onClick={() => handleDelete(marca.id)} />
+               
               </div>
             </TableCell>
           </TableRow>
